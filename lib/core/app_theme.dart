@@ -6,9 +6,11 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.black,
 
     elevatedButtonTheme: ElevatedButtonThemeData(
+
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(AppColors.red),
-        fixedSize: MaterialStateProperty.all(const Size(340, 57)),
+        fixedSize: MaterialStateProperty.all(const Size(340, 60)),
+
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(29),
