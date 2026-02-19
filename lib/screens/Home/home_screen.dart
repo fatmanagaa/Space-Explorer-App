@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:space_app/core/app_assets.dart';
 import 'package:space_app/core/app_colors.dart';
+import 'package:space_app/core/app_routes.dart';
 import 'package:space_app/core/app_styles.dart';
 import 'package:space_app/model/planet_model.dart';
+import 'package:space_app/screens/details/planet_data.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,13 +17,13 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<PlanetModel> planetsData = [
     PlanetModel(name: 'Mercury', image: AppAssets.mercury),
     PlanetModel(name: 'Venus', image: AppAssets.venus),
-    PlanetModel(name: 'Earth', image:AppAssets.earth),
-    PlanetModel(name: 'Mars', image:AppAssets.mars),
-    PlanetModel(name: 'Jupiter', image:AppAssets.jupiter),
+    PlanetModel(name: 'Earth', image: AppAssets.earth),
+    PlanetModel(name: 'Mars', image: AppAssets.mars),
+    PlanetModel(name: 'Jupiter', image: AppAssets.jupiter),
     PlanetModel(name: 'Saturn', image: AppAssets.saturn),
     PlanetModel(name: 'Uranus', image: AppAssets.uranus),
     PlanetModel(name: 'Neptune', image: AppAssets.neptune),
-    PlanetModel(name: 'Sun', image:AppAssets.sun),
+    PlanetModel(name: 'Sun', image: AppAssets.sun),
   ];
   final PageController controller = PageController(initialPage: 0);
   int currentPage = 0;
@@ -81,8 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(planetsData[index].image!, fit: BoxFit.contain,height: 250,),
-                      SizedBox(height: 30,),
+                      Image.asset(
+                        planetsData[index].image!,
+                        fit: BoxFit.contain,
+                        height: 250,
+                      ),
+                      SizedBox(height: 30),
                       Text(
                         planetsData[index].name!,
                         style: AppStyles.titleLarge,
@@ -133,8 +139,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               onPressed: () {
                 //todo: navigate to details screen
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.planetDetailsScreen,
+                  arguments: planetsDetails[currentPage],
+                );
               },
-              child: Row(mainAxisAlignment: MainAxisAlignment.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Explore ${planetsData[currentPage].name}',

@@ -4,12 +4,12 @@ class PlanetDetailsModel {
   final String model3d;
   final String title;
   final String about;
-  final int distanceFromSunKm;
-  final double lengthOfDayHours;
-  final double orbitalPeriodYears;
-  final double radiusKm;
+  final String distanceFromSunKm;
+  final String lengthOfDayHours;
+  final String orbitalPeriodYears;
+  final String radiusKm;
   final String massKg;
-  final double gravity;
+  final String gravity;
   final String surfaceAreaKm2;
 
   PlanetDetailsModel({
@@ -27,20 +27,5 @@ class PlanetDetailsModel {
     required this.surfaceAreaKm2,
   });
 
-  factory PlanetDetailsModel.fromJson(Map<String, dynamic> json) {
-    return PlanetDetailsModel(
-      name: json['name'],
-      image: json['image'],
-      model3d: json['model3d'],
-      title: json['title'],
-      about: json['about'],
-      distanceFromSunKm: (json['distanceFromSunKm'] as num).toInt(),
-      lengthOfDayHours: (json['lengthOfDayHours'] as num).toDouble(),
-      orbitalPeriodYears: (json['orbitalPeriodYears'] as num).toDouble(),
-      radiusKm: (json['radiusKm'] as num).toDouble(),
-      massKg: json['massKg'],
-      gravity: (json['gravity'] as num).toDouble(),
-      surfaceAreaKm2: json['surfaceAreaKm2'],
-    );
-  }
+
 }
