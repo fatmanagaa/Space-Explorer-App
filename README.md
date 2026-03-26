@@ -28,7 +28,6 @@
 | **Flutter** | Cross-platform UI framework |
 | **Dart** | Programming language |
 | **Google Fonts** | Custom typography |
-| **Material Design 3** | UI components & theming |
 
 ---
 
