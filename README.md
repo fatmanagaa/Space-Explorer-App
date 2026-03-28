@@ -92,9 +92,9 @@ lib/
 assets/
 ├── images/                    # Planet & background images
 └── screenshots/               # App screenshots
-```
 
----
+
+
 
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
